@@ -5,7 +5,11 @@
 This thing was quite the challenge to fully rewrite from the ground up, with cleaner code, more flexible mechanics, and some of the new features of DH taken in to account. It took more than a month of work, is 300+ lines of code long, and really was my baby. I can't work on it anymore though, and it's actually fully functional as of writing this... and now that the 4th is pulling out of Darkest Hour, it's time for this to get released. I'm not happy about a lot of what happened, a lot of what people said about us, but this is the right thing to do.
 
 
+
+
 It's really a shame how things turned out for our unit in the game, but I really can't let more than a month of work go to waste. I'm releasing this in good faith to the community at large, hoping it will be used and that people will update and add functionality to the code in the future, even maintain it when big changes happen to the game. Final advice to other Darkest Hour realism units before we get on to how to use the mutator:
+
+
 
 "Darkest Hour is a -small- community. We need to be good to each other." - Captain S Bert of the 6th GA
 
@@ -14,26 +18,44 @@ It's really a shame how things turned out for our unit in the game, but I really
 =================================================================================
 
 
+
+
+
+
 You will need to compile this mod. Make a folder in steamapps/common/Red Orchestra called "RealismRevived" and put the Classes folder, as well as its entire content, inside of this folder. This structure is important, otherwise it's not going to compile properly. Next, go in your DarkestHour/System folder, and open DarkestHour.ini. 
+
+
 
 
 I'm going off memory from this point, in the section [Editor.Engine] there should be a bunch of lines saying "EditPackage=" with a bunch of packages. Go to the bottom of all that where it's "EditPackages=DH_Construction" or something to that degree. Make a space right underneath that line, and type without quotes, "EditPackages=RealismRevived".
 
 
+
+
 Now, the batch file that came in the Github repository, "Build the Mutator.bat", make sure that's in your steamapps/common/Red Orchestra/System directory, and then run it. It should build the mod file. You need the two components it pops out... RealismRevived.u, and RealismRevived.ucl. If you're missing one of these, the mutator won't work properly! RealismRevived.ucl is in DarkestHour/System, and RealismRevived.u will be in Red Orchestra/System (yeah I know it's dumb, but it is what it is). Take both of these files, and you're going to need to upload them to your server by FTP and restart (upload them to DarkestHour/System on the server).
+
+
 
 
 Pop in to webadmin once the server is restarted, go to the Mutators section, check the Realism Revived mutator, Set Selected Mutators, and then Restart Map and you're golden. 
 
 
 
+
+
 Manual for using the mutator is below! 
+
+
 
 =================================================================================
 
 
 
+
+
 Welcome to the manual for the 4th Infantry Division Realism mutator! This manual assumes you have already enabled the mutator on your server and restarted the level/map. I will run you through everything you need to know.
+
+
 
 
 -BIG WARNING-: Do NOT attempt to mess with the FriendlyFireScale, either by config, webadmin, etc, once the mutator is enabled! Just, don't. My implementation of disabling and enabling FF is very touchy and it's just way too easy to break it. Feel free to make a pull request if you can fix it.
@@ -42,16 +64,26 @@ Welcome to the manual for the 4th Infantry Division Realism mutator! This manual
 
 
 
+
+
 First, you MUST be logged in as an admin, I guarantee you not a single command will work unless you are! That's the biggest change from the old mutator, only an admin can do basically anything, and this is how I designed it, get used to it. It's better, and safer.
+
+
 
 
 Now, before you do -anything-... this is how the mutator works:
 
 
+
+
 - You make the settings you want for your realism match. Round duration (in seconds), round limit, how many rounds you need to win for the match to end, reinforcements for allies, and reinforcements for axis. Do NOT enable the match before doing this, because you can't go back without disabling the match, which ends the game and loads another map (or the same map if that's the only one in your rotation).
 
 
+
+
 - When you are SURE about all the settings that you have set (it won't tell you what you set, that's normal), then you enable the match. The changes won't happen until you call LIVE though, but what WILL happen, is the time limit will be infinite, reinforcements infinite, and friendly fire SHOULD be disabled. That will give you all the time you need to set up before LIVE.
+
+
 
 
 - Now, when you have everyone in position, and you're basically ready to go live, you call LIVE through the mutator. All the changes happen at once, the mutator itself calls LIVE out so you don't have to, and it's game on!
@@ -59,40 +91,68 @@ Now, before you do -anything-... this is how the mutator works:
 
 
 
+
+
 Now... how do we do all of this? Alright, assuming you're logged in to admin, here are the commands...
+
+
 
 
 Every command starts with 'mutate realism' without the quotes. So, for example, when I say a command is 'setroundtime' I mean you type 'mutate realism setroundtime'.
 
 
+
+
 Open the console (~) and here are the commands:
+
+
 
 enablerealismgame - This needs to be the FIRST command you type in! It enables a Realism gametype which overrides Advance, and any other gametype! It's needed, otherwise the moment you try to make a realism match on Advanced LIVE with 0 reinforcements, the game ends. After this command, make your settings below and then you're safe to enable a realism match and make it live.
 
+
+
 setroundtime <number in seconds> - This sets the time, in SECONDS. Set to 0 for unlimited time. Basically you'll have to convert minutes to seconds so you can put the right amount in. Sorry, that's just how it is...
+
+
 
 
 needmoretime - Actually a useful command. Sets time to unlimited so you have more time to make match settings, just in case people are messing about or you need to convert seconds to minutes. Don't worry, this won't mess with your settings... once you set your time, enable the match and call LIVE, it will override what this did, with your settings.
 
 
+
+
 infinitereinforcements - Right up there with needmoretime, this can help especially in levels that use a phase manager dictating your reinforcements (almost every advance map). Even after enabling a realism game, you may have to do this if you have guys teamkilling each other left and right before you enable a match. This won't affect how you set the reinforcements in your realism match, don't worry.
+
+
 
 
 setalliesreinforcements <number> - Sets the ally reinforcements. -1 is infinite... but you don't want that in realism. Set it to 0 and everyone only has one life, usually the setting you want. Remember that these changes won't happen until LIVE, so don't worry if someone isn't on the server yet. They can still spawn in UNTIL you call LIVE.
 
 
+
+
 setaxisreinforcements <number> Same as above, but for the Axis team. I could have had the command be the same and apply to both teams, but someone might want to do differing reinforcements for their realism for whatever reason (handicaps for smaller units), and could be nice to have a bit of a wave system going!
+
+
 
 
 setroundlimit <number> - Sets the max rounds for both teams. Make sure that WinLimit is ALWAYS lower than this! Set this to 1 if you're just doing a one round skirm anyway.
 
 
+
+
 setwinlimit <number> - Sets the wins a team needs before they are declared the winner. You can't see this on the scoreboard by original design, so don't worry if you can't see the change during LIVE. Set this to 1 if you're just doing a one round skirm anyway. Otherwise I recommend being smart about this one. For example, in a 5 round match, a win limit of 3 would be best.
+
+
 
 
 toggleconstructions - Turn constructions on or off in -any- gametype
 
+
+
 togglerallypoints - Turn rally points on or off in -any- gametype
+
+
 
 
 
