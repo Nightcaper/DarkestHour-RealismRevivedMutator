@@ -15,7 +15,7 @@ It's really a shame how things turned out for our unit in the game, but I really
 
 
 
-=================================================================================
+---
 
 
 
@@ -47,7 +47,7 @@ Manual for using the mutator is below!
 
 
 
-=================================================================================
+---
 
 
 
