@@ -1,13 +1,13 @@
 # 4th Infantry Division's Realism Revived - Realism Mutator
-## Scripted by Hammer of the 4th ID, with special thanks to Basnett for answering many questions and code help
+## Scripted by Hammer of the 4th ID, with special thanks to Basnett for answering many questions and code help, and so much more
 
 
-This thing was quite the challenge to fully rewrite from the ground up, with cleaner code, more flexible mechanics, and some of the new features of DH taken in to account. It took more than a month of work, is 300+ lines of code long, and really was my baby. I can't work on it anymore though, and it's actually fully functional as of writing this... and now that the 4th is pulling out of Darkest Hour, it's time for this to get released. I'm not happy about a lot of what happened, a lot of what people said about us, but this is the right thing to do.
+This thing was quite the challenge to fully rewrite from the ground up, with cleaner code, more flexible mechanics, and some of the new features of DH taken in to account. It took more than a month of work, is 300+ lines of code long, and really was my baby. I can't work on it anymore though, and it's actually fully functional as of writing this... and now that the 4th is pulling out of Darkest Hour, it's time for this to get released. I'm not happy about a lot of what happened, but this is the right thing to do. I can no longer work on this as is, since I am training to become a real programmer, and it takes up all of my free time.
 
 
 
 
-It's really a shame how things turned out for our unit in the game, but I really can't let more than a month of work go to waste. I'm releasing this in good faith to the community at large, hoping it will be used and that people will update and add functionality to the code in the future, even maintain it when big changes happen to the game. Final advice to other Darkest Hour realism units before we get on to how to use the mutator:
+I'm releasing this in good faith to the community at large, hoping it will be used and that people will update and add functionality to the code in the future, even maintain it when big changes happen to the game.
 
 
 
