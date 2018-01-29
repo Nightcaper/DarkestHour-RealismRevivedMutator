@@ -136,7 +136,7 @@ Open the console (~) and here are the commands:
 
 
 
-setroundlimit <number> - Sets the max rounds for both teams. Make sure that WinLimit is ALWAYS lower than this! Set this to 1 if you're just doing a one round skirm anyway.
+**setroundlimit** (number) - Sets the max rounds for both teams. Make sure that WinLimit is ALWAYS lower than this! Set this to 1 if you're just doing a one round skirm anyway. Although you could set it to two rounds if you wanted to debrief right after the match, or if you were doing a practice skirmish, it would let you go over where everyone was, their tactics and such, without the map changing on you.
 
 
 
