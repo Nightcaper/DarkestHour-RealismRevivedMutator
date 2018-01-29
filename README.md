@@ -27,7 +27,7 @@ You will need to compile this mod. Make a folder in *steamapps/common/Red Orches
 
 
 
-I'm going off memory from this point, in the section **[Editor.Engine]** there should be a bunch of lines saying *EditPackage=* with a bunch of packages. Go to the bottom of all that where it's *EditPackages=DH_Construction* or something to that degree. Make a space right underneath that line, and type, *EditPackages=RealismRevived*.
+I'm going off memory from this point, in the section **[Editor.EditorEngine]** there should be a bunch of lines saying *EditPackage=* with a bunch of packages. Go to the bottom of all that where it's *EditPackages=DH_Construction* or something to that degree. Make a space right underneath that line, and type, *EditPackages=RealismRevived*.
 
 
 
