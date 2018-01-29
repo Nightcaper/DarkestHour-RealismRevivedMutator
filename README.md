@@ -22,7 +22,7 @@ It's really a shame how things turned out for our unit in the game, but I really
 
 
 
-You will need to compile this mod. Make a folder in *steamapps/common/Red Orchestra* called "RealismRevived" and put the Classes folder, as well as its entire content, inside of this folder. This structure is important, otherwise it's not going to compile properly. Next, go in your *DarkestHour/System* folder, and open DarkestHour.ini. 
+You will need to compile this mod. This means that you **MUST** install the Steam tool *RedOrchestra SDK Beta.* That's gonna put a bunch of folders in your *steamapps/common/Red Orchestra* folder, this is normal, just ignore them. After doing that, make a folder in *steamapps/common/Red Orchestra* called "RealismRevived" and put the Classes folder, as well as its entire content, inside of this folder. This structure is important, otherwise it's not going to compile properly. Next, go in your *DarkestHour/System* folder, and open DarkestHour.ini. 
 
 
 
