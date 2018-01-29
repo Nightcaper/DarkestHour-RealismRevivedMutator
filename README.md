@@ -98,7 +98,7 @@ Now... how do we do all of this? Alright, assuming you're logged in to admin, he
 
 
 
-Every command starts with 'mutate realism' without the quotes. So, for example, when I say a command is 'setroundtime' I mean you type 'mutate realism setroundtime'.
+Every command starts with *mutate realism* without the quotes. So, for example, when I say a command is **setroundtime** I mean you type *mutate realism setroundtime*.
 
 
 
