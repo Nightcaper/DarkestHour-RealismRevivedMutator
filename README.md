@@ -11,7 +11,7 @@ It's really a shame how things turned out for our unit in the game, but I really
 
 
 
-=============================================================================================================
+=================================================================================
 
 
 You will need to compile this mod. Make a folder in steamapps/common/Red Orchestra called "RealismRevived" and put the Classes folder, as well as its entire content, inside of this folder. This structure is important, otherwise it's not going to compile properly. Next, go in your DarkestHour/System folder, and open DarkestHour.ini. 
@@ -29,7 +29,7 @@ Pop in to webadmin once the server is restarted, go to the Mutators section, che
 
 Manual for using the mutator is below! 
 
-==============================================================================================================
+=================================================================================
 
 
 
