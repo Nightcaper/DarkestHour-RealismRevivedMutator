@@ -140,7 +140,7 @@ function PostBeginPlay()
     // I don't like how I implemented this. It's inflexible and forces you not to change FriendlyFireScale. Someone please fix this in the future.
     RealismGameInfo.FriendlyFireScale = 1.0;
     bIsFFDisabled = false;
-    bDebugTesting = true; // POSTRELEASE - Comment this out before release!!!
+    //bDebugTesting = true; // POSTRELEASE - Comment this out before release!!!
 
 }
 
