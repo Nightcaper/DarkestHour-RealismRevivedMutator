@@ -46,6 +46,7 @@ var bool bIsMatchLive;
 var bool bIsFFDisabled;
 var bool bConstructionsEnabled;
 var bool bRallyPointsEnabled;
+var bool bDebugTesting;
 
 var config int ConfigAlliesReinforcements;
 var config int ConfigAxisReinforcements;
@@ -81,6 +82,8 @@ var localized string RallyPointsDisabledMessage;
 var localized string InfiniteReinforcementsMessage;
 var localized string ErrorWrongGameTypeMessage;
 var localized string RealismGameTypeEnabledMessage;
+var localized string AlliesDQMessage;
+var localized string AxisDQMessage;
 
 
 
@@ -137,6 +140,7 @@ function PostBeginPlay()
     // I don't like how I implemented this. It's inflexible and forces you not to change FriendlyFireScale. Someone please fix this in the future.
     RealismGameInfo.FriendlyFireScale = 1.0;
     bIsFFDisabled = false;
+    bDebugTesting = true; // POSTRELEASE - Comment this out before release!!!
 
 }
 
@@ -167,6 +171,18 @@ function Mutate(string MutateString, PlayerController Sender)
         else if (Command ~= "EnableRealismGame")
         {
             EnableRealism();
+            return;
+        }
+        else if (Command ~= "DQAxis")
+        {
+            Level.Game.Broadcast(self, AxisDQMessage);
+            RealismGameInfo.EndRound(ALLIES_TEAM_INDEX);
+            return;
+        }
+        else if (Command ~= "DQAllies")
+        {
+            Level.Game.Broadcast(self, AlliesDQMessage);
+            RealismGameInfo.EndRound(AXIS_TEAM_INDEX);
             return;
         }
         else if (Command ~= "DisableMatch")
@@ -371,7 +387,14 @@ function SetRoundDuration(int NewSeconds)
 
 function bool IsReferee( PlayerController Sender )
 {
-    return Sender.PlayerReplicationInfo.bAdmin || Sender.PlayerReplicationInfo.bSilentAdmin;
+    if ( bDebugTesting )
+    {
+        return true;
+    }
+    else
+    {
+        return Sender.PlayerReplicationInfo.bAdmin || Sender.PlayerReplicationInfo.bSilentAdmin;
+    }
 }
 
 function ToggleConstructions()
@@ -497,4 +520,6 @@ defaultproperties
     InfiniteReinforcementsMessage="[Realism Match] Reinforcements set to infinite. This won't impact the realism match you set up once you enable it and call LIVE."
     ErrorWrongGameTypeMessage="[Realism Match - ERROR] The Realism gametype is not enabled! Please enable the Realism gametype before trying to enable a match!"
     RealismGameTypeEnabledMessage="[Realism Match] Realism Gametype has been enabled. Please wait while the game resets."
+    AlliesDQMessage="[Realism Match - DISQUALIFICATION] Allies have been disqualified!"
+    AxisDQMessage="[Realism Match - DISQUALIFICATION] Axis have been disqualified!"
 }
