@@ -1,2 +1,2 @@
-# DarkestHour-RealismRevivedMutator
-The 4th Infantry Division's Realism mutator built from the ground up to be the successor to the old 29th Realism mutator that no longer works.
+# 4th Infantry Division's Realism Revived - Realism Mutator
+## Scripted by Hammer of the 4th ID, with special thanks to Basnett for answering many questions and code help
