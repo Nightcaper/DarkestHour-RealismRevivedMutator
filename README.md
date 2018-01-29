@@ -173,6 +173,10 @@ Alright, after setting all the match parameters (I made them have defaults in ca
 
 **matchlive** - The golden command, the one command that matters the most. Once you type this command, it's on. All the settings happen at once, LIVE is called in the chat by the mutator, and everyone's locked in... friendly fire will be re-enabled... or should. Now, here's the crazy thing, what I changed about it, what it didn't have before... you can call a CEASE FIRE by calling this same command before the match is over. That's right, you can UN-LIVE it. Let's say someone wasn't in their proper place, or someone broke a rule you set for the match, and you need to stop the match because otherwise the skirmish would be unfair. Just type 'mutate realism matchlive' again, and the chat will blow up with "CEASE FIRE CEASE FIRE!!", reinforcements infinite again, time limit infinite again, and friendly fire should be off once again.
 
+**DQAxis** - Disqualifies the Axis team, whether the match is live or not. This adds a win to allies, ends the round, and sets match to not live. If you need to show them why they were DQ'd, do that before using this command since ending the round will set everyone back to their spawn menu.
+
+**DQAllies** - Same as above command, but disqualifies the Allies team and adds a win to Axis.
+
 
 
 That's it, that's all the commands. Just follow those instructions, and you should have no issue setting you your practice, or real, skirmishes. This mutator took a lot of work, and is very different from how the 29ths mutator worked. I will no longer be working on this actively, so you get what you get.
